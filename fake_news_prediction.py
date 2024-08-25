@@ -46,7 +46,7 @@ def main():
      # Title of your web app
      st.title("Fake News Prediction System")
      user_text = st.text_area("Enter a sentence to check if it's true or fake:", height = 350)
- if st.button("Article/News Analysis Result"):
+    if st.button("Article/News Analysis Result"):
     news_pred = news_prediction(user_text)
     
     if (news_pred == "This is Fake News!"):
