@@ -29,16 +29,16 @@ def wordopt(text):
 
 # prediction function 
 def news_prediction(news):
-  testing_news = {"text":[news]}
-   new_def_test = pd.DataFrame(testing_news)
-   new_def_test['text'] = new_def_test['text'].apply(wordopt)
-   new_x_test = new_def_test['text']
-   new_tfidf_test = vc.transform(new_x_test)
-   pred_lr = lr.predict(new_tfidf_test)
+    testing_news = {"text":[news]}
+    new_def_test = pd.DataFrame(testing_news)
+    new_def_test['text'] = new_def_test['text'].apply(wordopt)
+    new_x_test = new_def_test['text']
+    new_tfidf_test = vectorizer.transform(new_x_test)
+    pred_dt = decision_tree.predict(new_tfidf_test)
     
-if (pred_lr[0] == 0):
+    if (pred_dt[0] == 0):
       return "This is Fake News!"
-   else:
+    else:
       return "The News seems to be True!"
     
  # Streamlit application starts here 
