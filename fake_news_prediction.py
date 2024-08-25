@@ -55,3 +55,6 @@ def main():
     else:
       st.success(news_pred)
       st.balloons()
+
+if __name__ == "__main__":
+  main()
