@@ -45,9 +45,10 @@ def news_prediction(news):
 def main():
      # Title of your web app
      st.title("Fake News Prediction System")
-     user_text = st.text_area("Enter a sentence to check if it's true or fake:", height = 350)
+     user_text = st.text_area("Enter a sentence to check if it's true or fake:", height - 350)
    
-   if st.button("Article/News Analysis Result"):
+   
+  if st.button("Article Analysis Result"):
     news_pred = news_prediction(user_text)
     
     if (news_pred == "This is Fake News!"):
@@ -55,6 +56,6 @@ def main():
     else:
       st.success(news_pred)
       st.balloons()
-
+ 
 if __name__ == "__main__":
   main()
