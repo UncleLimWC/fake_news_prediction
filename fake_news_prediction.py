@@ -4,12 +4,6 @@ import pandas as pd
 import re
 import string
 
-# load dataset
-fake_sample= pd.read.csv(fake.csv)
-true_sample=pd.read_csv(true.csv)
-
-
-
 # Load your logistic regression model and tdidfVectorizer 
 lr_loaded = load('logistic_regression_model.joblib')
 tv_loaded = load('tfidfVectorizer.joblib')
