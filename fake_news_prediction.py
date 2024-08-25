@@ -30,7 +30,7 @@ def news_prediction(news):
     new_tfidf_test = tv_loaded.transform(new_x_test)
     pred_lr = lr_loaded.predict(new_tfidf_test)
     
-    if pred_dt[0] == 0:
+    if pred_lr[0] == 0:
         return "This is Fake News!"
     else:
         return "The News seems to be True!"
@@ -42,7 +42,6 @@ def main():
     user_text = st.text_area("Enter a sentence to check if it's true or fake:", height=350)
    
     if st.button("Article Analysis Result"):
-        if user_text:
             news_pred = news_prediction(user_text)
     
             if news_pred == "This is Fake News!":
