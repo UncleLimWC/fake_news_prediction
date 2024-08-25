@@ -49,6 +49,7 @@ def main():
    
    
   if st.button("Article Analysis Result"):
+    if user_text:
     news_pred = news_prediction(user_text)
     
     if (news_pred == "This is Fake News!"):
