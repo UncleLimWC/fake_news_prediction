@@ -24,7 +24,7 @@ def wordopt(text):
     text = re.sub('[%s]' % re.escape(string.punctuation), '', text) # removes any string with % in it 
     text = re.sub('\n','',text) # remove next lines
     text = re.sub('\w*\d\w*','', text) # removes any string that contains atleast a digit with zero or more characters
-  return text
+ return text
   
 
 # prediction function 
