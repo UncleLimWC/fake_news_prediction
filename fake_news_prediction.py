@@ -3,6 +3,7 @@ from joblib import load
 import pandas as pd
 import re
 import string
+import pickle 
 
 # Load your logistic regression model and tdidfVectorizer 
 lr_loaded = load('logistic_regression_model.joblib')
