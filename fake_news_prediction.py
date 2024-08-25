@@ -42,7 +42,7 @@ def news_prediction(news):
       return "The News seems to be True!"
     
  # Streamlit application starts here 
- def main():
+def main():
      # Title of your web app
      st.title("Fake News Prediction System")
      user_text = st.text_area("Enter a sentence to check if it's true or fake:", height = 350)
