@@ -3,7 +3,6 @@ from joblib import load
 import pandas as pd
 import re
 import string
-import pickle 
 
 # Load your logistic regression model and tdidfVectorizer 
 lr_loaded = load('logistic_regression_model.joblib')
@@ -31,7 +30,7 @@ def news_prediction(news):
     pred_lr = lr_loaded.predict(new_tfidf_test)
     
     if pred_lr[0] == 0:
-        return "This is Fake News!"
+        return "This is Fake News! Don't Listen what the kopitiam uncle and aunty say."
     else:
         return "The News seems to be True!"
 
@@ -41,14 +40,16 @@ def main():
     st.title("Fake News Prediction System")
     user_text = st.text_area("Enter a sentence to check if it's true or fake:", height=350)
    
-    if st.button("Article Analysis Result"):
+    if st.button("Predict"):
+        if user_text.strip():  # Check if the input text is not just empty or spaces
             news_pred = news_prediction(user_text)
-    
             if news_pred == "This is Fake News!":
                 st.error(news_pred, icon="🚨")
             else:
                 st.success(news_pred)
                 st.balloons()
+        else:
+            st.error("Please enter some text before analyzing the news artiicle!")  # Prompt user to input text
 
 if __name__ == "__main__":
     main()
