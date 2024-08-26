@@ -43,13 +43,13 @@ def main():
     if st.button("Predict"):
         if user_text.strip():  # Check if the input text is not just empty or spaces
             news_pred = news_prediction(user_text)
-            if news_pred == "This is Fake News!":
+            if news_pred.startswith("This is Fake News!"):  # Adjusted condition here
                 st.error(news_pred, icon="🚨")
             else:
                 st.success(news_pred)
                 st.balloons()
         else:
-            st.error("Please enter some text before analyzing the news artiicle!")  # Prompt user to input text
+            st.error("Please enter some text before analyzing the news article!")  # Updated error message for clarity
 
 if __name__ == "__main__":
     main()
